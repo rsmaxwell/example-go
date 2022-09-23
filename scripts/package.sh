@@ -1,18 +1,18 @@
 #!/bin/bash
 
-NAME=example-c
 
-ZIPFILE=${NAME}_amd64-linux.zip
 
-PROJECT_DIR=$(pwd)
-BUILD_DIR=${PROJECT_DIR}/build
-PACKAGE_DIR=${PROJECT_DIR}/package
+ZIPFILE=${PROJECT_NAME}_amd64-linux.zip
+
+
+BUILD_DIR=../build
+PACKAGE_DIR=../package
+DIST_DIR=../dist
 
 rm -rf ${PACKAGE_DIR}
-mkdir -p ${PACKAGE_DIR}
+mkdir -p ${PACKAGE_DIR} ${DIST_DIR}
 
 cd ${PACKAGE_DIR}
-cp ${BUILD_DIR}/${NAME} .
+cp ${BUILD_DIR}/${PROJECT_NAME} .
 
-zip ${PROJECT_DIR}/${ZIPFILE} ${NAME}
-
+zip ${DIST_DIR}/${ZIPFILE} *

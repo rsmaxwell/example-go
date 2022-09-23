@@ -1,11 +1,16 @@
 #!/bin/bash
 
-PROJECT_DIR=$(pwd)
-BUILD_DIR=${PROJECT_DIR}/build
+set -x
+
+BUILD_DIR=../build
+GOOS=$(go env GOOS)
+GOARCH=$(go env GOENV)
+GOEXE=$(go env GOEXE)
+
 
 mkdir -p ${BUILD_DIR}
-cd ${BUILD_DIR}
 
-export SOURCE=${PROJECT_DIR}/src/main/c
 
-make --file ${PROJECT_DIR}/src/main/make/linux_amd64.makefile $*
+go build -o ${BUILD_DIR}/${PROJECT_NAME}-${GOOS}-${GOARCH}${GOEXE} ./...
+
+'tree $WORKSPACE'
