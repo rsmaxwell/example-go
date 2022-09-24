@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME=example-cpp
+NAME=example-go
 
 GROUPID=com.rsmaxwell.example
 ARTIFACTID=${NAME}_amd64-linux

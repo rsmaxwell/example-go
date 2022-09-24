@@ -10,4 +10,6 @@ GOEXE=$(go env GOEXE)
 mkdir -p ${BUILD_DIR}
 
 
+set -x 
+
 go build -o ${BUILD_DIR}/${NAME}-${GOOS}-${GOARCH}${GOEXE} ./...
