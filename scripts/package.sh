@@ -12,6 +12,6 @@ rm -rf ${PACKAGE_DIR} ${DIST_DIR}
 mkdir -p ${PACKAGE_DIR} ${DIST_DIR}
 
 cd ${PACKAGE_DIR}
-cp ${BUILD_DIR}/${NAME} .
+cp ${BUILD_DIR}/hello .
 
 zip ${DIST_DIR}/${ZIPFILE} *
