@@ -1,5 +1,14 @@
 #!/bin/bash
 
-go install ./...
+NAME=example-go
+BUILD_DIR=./build
+GOOS=$(go env GOOS)
+GOARCH=$(go env GOENV)
+GOEXE=$(go env GOEXE)
 
-ls -al $GOPATH
+set -x 
+
+go build -o ${BUILD_DIR} ./...
+
+echo "BUILD_DIR = ${BUILD_DIR}"
+ls -al ${BUILD_DIR}
