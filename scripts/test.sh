@@ -1,8 +1,9 @@
 #!/bin/bash
 
-NAME=example-cpp
-PROJECT_DIR=$(pwd)
-BUILD_DIR=${PROJECT_DIR}/build
+NAME=example-go
+BUILD_DIR=./build
+
+ls -al ${BUILD_DIR}
 
 set -x
 ${BUILD_DIR}/${NAME}
