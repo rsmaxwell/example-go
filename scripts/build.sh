@@ -1,6 +1,13 @@
 #!/bin/bash
 
-go build ./...
+NAME=example-go
+BUILD_DIR=./build
+GOOS=$(go env GOOS)
+GOARCH=$(go env GOENV)
+GOEXE=$(go env GOEXE)
 
 
-ls -al 
+mkdir -p ${BUILD_DIR}
+
+
+go build -o ${BUILD_DIR}/${NAME}-${GOOS}-${GOARCH}${GOEXE} ./...
