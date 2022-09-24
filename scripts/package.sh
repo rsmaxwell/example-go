@@ -2,8 +2,7 @@
 
 set -x
 
-NAME=example-go
-ZIPFILE=${NAME}_amd64-linux.zip
+ZIPFILE=example-go_amd64_linux.zip
 
 BUILD_DIR=./build
 PACKAGE_DIR=./package
