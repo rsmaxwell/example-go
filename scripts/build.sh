@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BUILD_DIR=./build
+
 set -x 
 
 go build -o ${BUILD_DIR} ./...
