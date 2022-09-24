@@ -1,6 +1,6 @@
 #!/bin/bash
 
-go ./...
+go build ./...
 
 
 ls -al 
