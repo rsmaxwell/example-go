@@ -7,6 +7,8 @@ pwd
 echo "GOROOT = $(go env GOROOT)"
 echo "GOPATH = $(go env GOPATH)"
 
+rm -rf $GOPATH/pkg
+
 echo "Initial contents of $GOPATH"
 find $GOPATH
 
@@ -15,11 +17,6 @@ BUILD_DIR=./build
 go get -u github.com/gorilla/mux
 
 go build -o ${BUILD_DIR}/ ./...
-
-touch $GOPATH/x1.txt
-touch $GOPATH/src/x2.txt
-touch $GOPATH/pkg/x3.txt
-touch $GOPATH/bin/x4.txt
 
 echo "Final contents of $GOPATH"
 find $GOPATH
