@@ -20,3 +20,6 @@ echo "Final contents of $GOPATH"
 find $GOPATH
 
 ls -al $BUILD_DIR
+
+echo "Contents of ${BUILD_DIR}
+find $BUILD_DIR
