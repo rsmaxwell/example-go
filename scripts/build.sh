@@ -7,8 +7,6 @@ pwd
 echo "GOROOT = $(go env GOROOT)"
 echo "GOPATH = $(go env GOPATH)"
 
-rm -rf $GOPATH/pkg
-
 echo "Initial contents of $GOPATH"
 find $GOPATH
 
