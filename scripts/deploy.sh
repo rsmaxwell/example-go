@@ -14,8 +14,9 @@ URL=https://pluto.rsmaxwell.co.uk/archiva/repository/${REPOSITORY}
 DIST_DIR=./dist
 cd ${DIST_DIR}
 
-#ZIPFILE=${ARTIFACTID}.${PACKAGING}
 ZIPFILE=$(ls ${NAME}*)
+
+set -x
 
 mvn --batch-mode deploy:deploy-file \
 	-DgroupId=${GROUPID} \
@@ -25,4 +26,3 @@ mvn --batch-mode deploy:deploy-file \
 	-Dfile=${ZIPFILE} \
 	-DrepositoryId=${REPOSITORYID} \
 	-Durl=${URL}
-
