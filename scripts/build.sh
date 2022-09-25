@@ -11,10 +11,15 @@ go build -o ${BUILD_DIR}/ ./...
 ls -al /go
 ls -al /go/bin
 ls -al /go/pkg
+ls -al /go/pkg/mod
 ls -al /go/src
 
 pwd
 echo "GOROOT = $GOROOT"
 echo "GOPATH = $GOPATH"
+
+
+echo "GOROOT = $(go env GOROOT)"
+echo "GOPATH = $(go env GOPATH)"
 
 ls -al $BUILD_DIR
