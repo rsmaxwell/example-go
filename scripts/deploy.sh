@@ -11,13 +11,11 @@ REPOSITORY=releases
 REPOSITORYID=releases
 URL=https://pluto.rsmaxwell.co.uk/archiva/repository/${REPOSITORY}
 
-ZIPFILE=${ARTIFACTID}.${PACKAGING}
-
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-PROJECT_DIR=$(dirname ${SCRIPT_DIR})
-DIST_DIR=${PROJECT_DIR}/dist
-
+DIST_DIR=./dist
 cd ${DIST_DIR}
+
+#ZIPFILE=${ARTIFACTID}.${PACKAGING}
+ZIPFILE=$(ls ${NAME}*)
 
 mvn --batch-mode deploy:deploy-file \
 	-DgroupId=${GROUPID} \
