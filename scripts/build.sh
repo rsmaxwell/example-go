@@ -2,22 +2,19 @@
 
 set -x 
 
+echo "Initial contents of /go"
+find /go
+
 BUILD_DIR=./build
 
 go get -u github.com/gorilla/mux
 
 go build -o ${BUILD_DIR}/ ./...
 
-ls -al /go
-ls -al /go/bin
-ls -al /go/pkg
-ls -al /go/pkg/mod
-ls -al /go/src
+echo "Final contents of /go"
+find /go
 
 pwd
-echo "GOROOT = $GOROOT"
-echo "GOPATH = $GOPATH"
-
 
 echo "GOROOT = $(go env GOROOT)"
 echo "GOPATH = $(go env GOPATH)"
