@@ -2,8 +2,8 @@
 
 set -x 
 
-echo "Initial contents of /go"
-find /go
+echo "Initial contents of ."
+find .
 
 BUILD_DIR=./build
 
@@ -11,8 +11,8 @@ go get -u github.com/gorilla/mux
 
 go build -o ${BUILD_DIR}/ ./...
 
-echo "Final contents of /go"
-find /go
+echo "Final contents of ."
+find .
 
 pwd
 
