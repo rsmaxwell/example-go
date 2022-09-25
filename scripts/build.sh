@@ -17,4 +17,4 @@ pwd
 echo "GOROOT = $GOROOT"
 echo "GOPATH = $GOPATH"
 
-ls -al $BUILD_DIR}
+ls -al $BUILD_DIR
