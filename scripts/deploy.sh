@@ -3,7 +3,7 @@
 NAME=example-go
 
 GROUPID=com.rsmaxwell.example
-ARTIFACTID=${NAME}_amd64_linux
+ARTIFACTID=${NAME}-x86_64-linux
 VERSION=${BUILD_ID:-SNAPSHOT}
 PACKAGING=zip
 
