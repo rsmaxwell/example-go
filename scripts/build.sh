@@ -2,6 +2,11 @@
 
 set -x 
 
+pwd
+
+echo "GOROOT = $(go env GOROOT)"
+echo "GOPATH = $(go env GOPATH)"
+
 echo "Initial contents of $GOPATH"
 find $GOPATH
 
@@ -13,10 +18,5 @@ go build -o ${BUILD_DIR}/ ./...
 
 echo "Final contents of $GOPATH"
 find $GOPATH
-
-pwd
-
-echo "GOROOT = $(go env GOROOT)"
-echo "GOPATH = $(go env GOPATH)"
 
 ls -al $BUILD_DIR
