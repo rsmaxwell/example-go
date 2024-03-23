@@ -54,6 +54,9 @@ fi
 
 
 
+export GOFLAGS=-buildvcs=false
+
+
 go build -o ./build ./...
 result=$?
 if [ ! ${result} -eq 0 ]; then
