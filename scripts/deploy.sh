@@ -20,6 +20,9 @@ ZIPFILE=${ARTIFACTID}_${VERSION}.${PACKAGING}
 
 cd ${DIST_DIR}
 
+pwd
+ls -al
+
 set -x
 mvn --batch-mode \
 	--errors \
