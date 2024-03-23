@@ -1,9 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
-NAME=example-go
+PROJECT_DIR=$(pwd)
+BUILD_DIR=${PROJECT_DIR}/build
+DIST_DIR=${PROJECT_DIR}/dist
 
+. ${BUILD_DIR}/buildinfo
+
+PROJECT=example-go
 GROUPID=com.rsmaxwell.example
-ARTIFACTID=${NAME}-x86_64-linux
+ARTIFACTID=${PROJECT}_${FAMILY}_${ARCHITECTURE}
 VERSION=${BUILD_ID:-SNAPSHOT}
 PACKAGING=zip
 
@@ -11,14 +16,13 @@ REPOSITORY=releases
 REPOSITORYID=releases
 URL=https://pluto.rsmaxwell.co.uk/archiva/repository/${REPOSITORY}
 
-DIST_DIR=./dist
+ZIPFILE=${ARTIFACTID}_${VERSION}.${PACKAGING}
+
 cd ${DIST_DIR}
 
-ZIPFILE=$(ls ${NAME}*)
-
-set -x
-
-mvn --batch-mode deploy:deploy-file \
+mvn --batch-mode \
+	--errors \
+	deploy:deploy-file \
 	-DgroupId=${GROUPID} \
 	-DartifactId=${ARTIFACTID} \
 	-Dversion=${VERSION} \
@@ -26,3 +30,13 @@ mvn --batch-mode deploy:deploy-file \
 	-Dfile=${ZIPFILE} \
 	-DrepositoryId=${REPOSITORYID} \
 	-Durl=${URL}
+
+result=$?
+if [ ! ${result} -eq 0 ]; then
+    echo "deployment failed"
+    echo "Error: $0[${LINENO}] result: ${result}"
+    exit 1
+fi
+
+echo "Success"
+

@@ -7,7 +7,7 @@ func Version() string {
 
 // BuildDate function
 func BuildDate() string {
-	return "<TIMESTAMP>"
+	return "<BUILD_DATE>"
 }
 
 // GitCommit function
