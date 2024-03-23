@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-
 PROJECT_DIR=$(pwd)
 BUILD_DIR=${PROJECT_DIR}/build
 DIST_DIR=${PROJECT_DIR}/dist
@@ -22,6 +20,7 @@ ZIPFILE=${ARTIFACTID}_${VERSION}.${PACKAGING}
 
 cd ${DIST_DIR}
 
+set -x
 mvn --batch-mode \
 	--errors \
 	deploy:deploy-file \
@@ -34,6 +33,7 @@ mvn --batch-mode \
 	-Durl=${URL}
 
 result=$?
+set +x
 if [ ! ${result} -eq 0 ]; then
     echo "deployment failed"
     echo "Error: $0[${LINENO}] result: ${result}"

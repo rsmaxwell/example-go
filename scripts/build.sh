@@ -56,9 +56,10 @@ fi
 
 export GOFLAGS=-buildvcs=false
 
-
+set -x
 go build -o ./build ./...
 result=$?
+set +x
 if [ ! ${result} -eq 0 ]; then
     echo "go build failed"
     echo "Error: $0[${LINENO}] result: ${result}"
