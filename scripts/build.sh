@@ -54,7 +54,7 @@ fi
 
 
 
-go build ./...
+go build -o ./build ./...
 result=$?
 if [ ! ${result} -eq 0 ]; then
     echo "go build failed"
