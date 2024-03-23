@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 PROJECT_DIR=$(pwd)
 BUILD_DIR=${PROJECT_DIR}/build
 DIST_DIR=${PROJECT_DIR}/dist
