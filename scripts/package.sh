@@ -20,17 +20,12 @@ mkdir -p ${PACKAGE_DIR} ${DIST_DIR}
 cd ${PACKAGE_DIR}
 cp ${BUILD_DIR}/${EXECUTABLE} .
 
-set -x
 zip ${DIST_DIR}/${ZIPFILE} ${EXECUTABLE}
 result=$?
-set +x
 if [ ! ${result} -eq 0 ]; then
     echo "packaging failed"
     echo "Error: $0[${LINENO}] result: ${result}"
     exit 1
 fi
 
-
-
 echo "Success"
-

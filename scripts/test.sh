@@ -12,10 +12,8 @@ mkdir -p ${TEST_DIR}
 cd ${TEST_DIR}
 
 
-set -x
 ${BUILD_DIR}/${EXECUTABLE}
 result=$?
-set +x
 if [ ${result} -eq 0 ]; then
     echo "Success" > status.txt
 else

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-PROJECT_DIR=$(pwd)
+BASEDIR=$(dirname "$0")
+SCRIPT_DIR=$(cd $BASEDIR && pwd)
+PROJECT_DIR=$(dirname $SCRIPT_DIR)
 BUILD_DIR=${PROJECT_DIR}/build
 DIST_DIR=${PROJECT_DIR}/dist
 
@@ -15,9 +17,7 @@ PACKAGING=zip
 REPOSITORY=releases
 REPOSITORYID=releases
 
-ZIPFILE=${ARTIFACTID}_${VERSION}.${PACKAGING}
-
-cd ${DIST_DIR}
+ZIPFILE=${DIST_DIR}/${ARTIFACTID}_${VERSION}.${PACKAGING}
 
 if [ -f ${HOME}/.m2/maven-repository-info ]; then
     . ${HOME}/.m2/maven-repository-info
